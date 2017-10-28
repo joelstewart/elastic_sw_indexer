@@ -1,0 +1,28 @@
+{
+   "template":"sw*",
+   "settings":{
+      "number_of_shards":1
+   },
+   "mappings":{
+      "_default_":{
+         "dynamic_templates":[
+            {
+               "not_analyzed_strings":{
+                  "match_mapping_type":"string",
+                  "mapping":{
+                     "type":"string",
+                     "index":"not_analyzed"
+                  }
+               }
+            }
+         ]
+      },
+      "film" :{
+         "properties":{
+            "opening_crawl":{
+               "type":"string"
+            }
+         }
+      }
+   }
+}
