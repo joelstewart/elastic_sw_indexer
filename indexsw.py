@@ -8,15 +8,11 @@ host="192.168.56.10"
 port=9200
 esrest='http://'+host+':'+str(port)
 
-#template mapping to use
-
-
-#separate indexes or same index.
-separate=True
-
 #log data as it is added
 verbose=True
 
+#for denormalization
+objs = {}
 
 #returns the int value as id from a url 
 def idFromUrl(url):
@@ -75,13 +71,16 @@ def idxsw(indx, type, swapi):
     for obj in j['results']:      
       id = idFromUrl(obj['url'])
       format(obj)
+      #objs for later denorm.
+      objs[obj['url']] = (indx,type,id,obj)
       if verbose:
 	print obj
       es.index(index=indx, doc_type=type, id=id, body=obj)
-    if 'None' !=  str(j['next']):
+    if 'None' !=  j['next']:
        r = requests.get(j['next'])
     else:
       return
+ 
 
 #test es running 
 res = requests.get(esrest)
@@ -89,19 +88,39 @@ print(res.content)
 es = Elasticsearch([{'host': host, 'port': port}])
 
 #index   
-if (separate):
-  idxsw('sw_people','people','http://swapi.co/api/people/')
-  idxsw('sw_species','species','http://swapi.co/api/species/')
-  idxsw('sw_films','films','http://swapi.co/api/films/')
-  idxsw('sw_planets','planets','http://swapi.co/api/planets/')
-  idxsw('sw_starships','starships','http://swapi.co/api/starships/')
-  idxsw('sw_vehicles','vehicles','http://swapi.co/api/vehicles/')
-else:
-  idxsw('swapi','people','http://swapi.co/api/people/')
-  idxsw('swapi','species','http://swapi.co/api/species/')
-  idxsw('swapi','films','http://swapi.co/api/films/')
-  idxsw('swapi','planets','http://swapi.co/api/planets/')
-  idxsw('swapi','starships','http://swapi.co/api/starships/')
-  idxsw('swapi','vehicles','http://swapi.co/api/vehicles/')
+idxsw('sw_people','people','http://swapi.co/api/people/')
+idxsw('sw_species','species','http://swapi.co/api/species/')
+idxsw('sw_films','films','http://swapi.co/api/films/')
+idxsw('sw_planets','planets','http://swapi.co/api/planets/')
+idxsw('sw_starships','starships','http://swapi.co/api/starships/')
+idxsw('sw_vehicles','vehicles','http://swapi.co/api/vehicles/')
 
-    
+
+#denormalize, replace url 'fk' links with names
+for key,tuple in objs.iteritems():
+  #tuple is 1. index 2. type 3. id 4. dict
+  obj = tuple[3]
+  if 'planets' in obj:
+    for i, p in enumerate(obj['planets']):
+      obj['planets'][i] = objs[p][3]['name']
+  if 'starships' in obj:
+    for i, p in enumerate(obj['starships']):
+      obj['starships'][i] = objs[p][3]['name']
+  if 'films' in obj:
+    for i, p in enumerate(obj['films']):
+      obj['films'][i] = objs[p][3]['title']
+  if 'people' in obj:
+    for i, p in enumerate(obj['people']):
+      obj['people'][i] = objs[p][3]['name']
+  if 'vehicles' in obj:
+    for i, p in enumerate(obj['vehicles']):
+      obj['vehicles'][i] = objs[p][3]['name']
+  if 'species' in obj:
+    for i, p in enumerate(obj['species']):
+      obj['species'][i] = objs[p][3]['name']
+  if 'homeworld' in obj:
+    if None != obj['homeworld']:
+      obj['homeworld'] = objs[obj['homeworld']][3]['name']
+  es.index(index=tuple[0],doc_type=tuple[1],id=tuple[2],body=tuple[3])
+
+
