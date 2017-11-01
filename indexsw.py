@@ -4,7 +4,7 @@ import json
 import sys
 
 #configs
-host="192.168.56.10"
+host="elastichost"
 port=9200
 esrest='http://'+host+':'+str(port)
 
@@ -75,8 +75,8 @@ def idxsw(indx, type, swapi):
       objs[obj['url']] = (indx,type,id,obj)
       if verbose:
 	print obj
-      es.index(index=indx, doc_type=type, id=id, body=obj)
-    if 'None' !=  j['next']:
+      #es.index(index=indx, doc_type=type, id=id, body=obj)
+    if None !=  j['next']:
        r = requests.get(j['next'])
     else:
       return
@@ -118,6 +118,9 @@ for key,tuple in objs.iteritems():
   if 'species' in obj:
     for i, p in enumerate(obj['species']):
       obj['species'][i] = objs[p][3]['name']
+  if 'characters' in obj:
+    for i, p in enumerate(obj['characters']):
+      obj['characters'][i] = objs[p][3]['name']
   if 'homeworld' in obj:
     if None != obj['homeworld']:
       obj['homeworld'] = objs[obj['homeworld']][3]['name']

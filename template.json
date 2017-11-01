@@ -1,7 +1,15 @@
 {
    "template":"sw*",
    "settings":{
-      "number_of_shards":1
+      "number_of_shards":1,
+      "analysis":{
+         "analyzer":{
+            "custom_analyzer":{
+               "type":"standard",
+               "stopwords": "_english_"
+            }
+         }
+      }
    },
    "mappings":{
       "_default_":{
@@ -17,10 +25,11 @@
             }
          ]
       },
-      "film" :{
+      "film":{
          "properties":{
             "opening_crawl":{
-               "type":"string"
+               "type":"string",
+               "analyzer":"custom_analyzer"
             }
          }
       }
