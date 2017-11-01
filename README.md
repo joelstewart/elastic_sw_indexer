@@ -9,8 +9,19 @@ This project takes that demonstration a few more steps.  The objective is to lea
 
  - Elasticsearch >= 2.4 
  - Python 2.7, with pip and virtualenv
+ - docker
 
 ## basic setup
+
+### install elasticsearch template
+The template will allow for correct mappings when indexing the sw data.
+
+```bash
+$ curl -XPUT http://elasticsearch:9200/_template/sw_template -d@template.json
+```
+
+### create a python virtual env
+
 
 ```bash
 $ git clone https://github.com/joelstewart/elastic_sw_indexer.git
@@ -20,37 +31,48 @@ $ cd elastic_sw_indexer
 (swesenv)$ pip install -r requirements.txt
 ```
 
-Edit the configs in indexsw.py for your environment.
+### Edit the configs 
 
-Install the template in elasticsearch:
-```bash
-$ curl -XPUT http://elasticsearch:9200/_template/sw_template -d@template.json
-```
+Edit the indexsw.py file to point to your elastic instance.
 
+
+### Run the indexer
 Run the indexer.   This will add 6 indexes to Elasticsearch for the sw data: sw_people, sw_planets, sw_starships, sw_films, sw_vehicles, sw_species.
 
 ```bash
 (swesenv)$ python indexsw.py
 ``` 
 
+### Check it all worked
+1) From a browser, check
 
-# the index template 
-The index template will turns off analysis for all string fields, except for the opening crawl text field in the sw_film type.   
+http://elasticsearch:9200/sw_films/_search?pretty
 
-# fixing the data
-The sw data contains many fields in json that are strings that are numeric values.  The template could define those types as integer, and elasticsearch would be smart enough to know how to convert those strings to integers.   Instead, the indexing script takes care of changing types of fields.
+You should see 7 json files for the films.
 
-# example queries
+The indexer script has modified some of the json.  It has denormalized the relationship values.  This is because Elasticsearch lacks join capabilities like SQL.   It is necessary to generated good visualizations.
 
-## full text queries
-
-From a browser, test a few queries
+2) From a browser, test a few queries
 
 http://192.168.56.10:9200/sw*/_search?q=space&pretty
 
 The _all field is enabled (https://www.elastic.co/guide/en/elasticsearch/reference/2.4/mapping-all-field.html), so this query has higher relevance for the "shortest" json containing the word space as a value of one of its fields.
 
+### Run KIBI
 
+Kibi has a community version to enable joins between dashboards.  This will allow selections on one dashboard to filter records on another.
+
+You will need to first install the siren-join plugin into your elasticsearch.  See instructions here: https://github.com/sirensolutions/siren-join
+
+Then run kibi using docker.  You can find instructions here:  https://hub.docker.com/r/sirensolutions/kibi-community-standalone/
+
+For example:
+
+```bash
+$ docker run --name -e ELASTICSEARCH_URL=http://elasticsearch:9200 -p 5606:5606 -d sirensolutions/kibi-community-standalone:4.6.4-4
+```
+
+Once kibi is running, try importing the included 
 
 
  
