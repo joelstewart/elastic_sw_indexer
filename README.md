@@ -50,7 +50,7 @@ http://elasticsearch:9200/sw_films/_search?pretty
 
 You should see 7 json files for the films.
 
-The indexer script has modified some of the json.  It has denormalized the relationship values.  This is because Elasticsearch lacks join capabilities like SQL.   It is necessary to generated good visualizations.
+The indexer script has modified some of the json.  It has denormalized the relationship values.  This is because Elasticsearch lacks join capabilities like SQL.   It is necessary to generate good visualizations with readable values instead of keys.
 
 2) From a browser, test a few queries
 
@@ -72,7 +72,7 @@ For example:
 $ docker run --name -e ELASTICSEARCH_URL=http://elasticsearch:9200 -p 5606:5606 -d sirensolutions/kibi-community-standalone:4.6.4-4
 ```
 
-Once kibi is running, try importing the included 
+Once kibi is running, try importing the included visualizations and dashboard.  In Kibi -> settings -> objects, import the export.json file.  
 
 
  
