@@ -1,0 +1,346 @@
+[
+  {
+    "_id": "4.6.4-4",
+    "_type": "config",
+    "_source": {
+      "buildNum": 13937,
+      "defaultIndex": "sw_people",
+      "kibi:relations": "{\"relationsIndices\":[{\"indices\":[{\"indexPatternType\":\"films\",\"indexPatternId\":\"sw_films\",\"path\":\"characters\"},{\"indexPatternType\":\"people\",\"indexPatternId\":\"sw_people\",\"path\":\"name\"}],\"label\":\"filter people on films\",\"id\":\"sw_films/films/characters/sw_people/people/name\"},{\"indices\":[{\"indexPatternType\":\"\",\"indexPatternId\":\"sw_people\",\"path\":\"films\"},{\"indexPatternType\":\"\",\"indexPatternId\":\"sw_films\",\"path\":\"title\"}],\"label\":\"filter films on people\",\"id\":\"sw_films//title/sw_people//films\"}],\"relationsDashboards\":[{\"dashboards\":[\"SW_FILM\",\"SW_PEOPLE\"],\"relation\":\"sw_films/films/characters/sw_people/people/name\"},{\"dashboards\":[\"SW_PEOPLE\",\"SW_FILM\"],\"relation\":\"sw_films//title/sw_people//films\"}],\"version\":2,\"relationsIndicesSerialized\":{\"options\":{\"autostart\":true,\"baseURL\":\"\",\"debug\":false,\"draggable\":true,\"colors\":{\"sw_films\":\"#006e8a\",\"sw_people\":\"#6f87d8\"},\"fontSize\":10,\"minNodeSize\":15,\"maxNodeSize\":30,\"minLinkSize\":0.8,\"maxLinkSize\":3,\"nodeR\":10,\"title\":null,\"showLegend\":false,\"forceGravity\":0.01,\"forceDistance\":200,\"monitorContainerSize\":true,\"linkColor\":\"#dedede\",\"linkHoverColor\":\"#444\",\"linkSize\":1,\"alwaysShowLinksLabels\":true,\"groupingForce\":{},\"nodeIcons\":{},\"wrapForeignObjectHtmlInBodyTag\":false,\"layersOrder\":[\"legend\",\"links\",\"linksLabelsBack\",\"nodes\",\"linksLabels\"],\"showContextMenu\":false},\"nodes\":[{\"id\":\"eegid-sw_films\",\"label\":\"sw_films\",\"nodeType\":\"sw_films\",\"size\":20,\"index\":0,\"weight\":2,\"x\":439.7767006399671,\"y\":56.07245012815335,\"px\":439.7767006399671,\"py\":56.07245012815335,\"fixed\":1},{\"id\":\"eegid-sw_people\",\"label\":\"sw_people\",\"nodeType\":\"sw_people\",\"size\":20,\"index\":1,\"weight\":2,\"x\":63.724590879634434,\"y\":54.439596463180465,\"px\":63.724590879634434,\"py\":54.439596463180465,\"fixed\":1}],\"links\":[{\"source\":\"eegid-sw_films\",\"target\":\"eegid-sw_people\",\"linkType\":\"filter people on films\",\"undirected\":true,\"size\":1,\"id\":\"eegid-sw_films-eegid-sw_people-filter people on films-0\",\"data\":{}},{\"source\":\"eegid-sw_people\",\"target\":\"eegid-sw_films\",\"linkType\":\"filter films on people\",\"undirected\":true,\"size\":1,\"id\":\"eegid-sw_people-eegid-sw_films-filter films on people-1\",\"data\":{}}]},\"relationsDashboardsSerialized\":{\"options\":{\"autostart\":true,\"baseURL\":\"\",\"debug\":false,\"draggable\":true,\"colors\":{\"sw_films\":\"#006e8a\",\"sw_people\":\"#6f87d8\"},\"fontSize\":10,\"minNodeSize\":15,\"maxNodeSize\":30,\"minLinkSize\":0.8,\"maxLinkSize\":3,\"nodeR\":10,\"title\":null,\"showLegend\":true,\"forceGravity\":0.01,\"forceDistance\":200,\"monitorContainerSize\":true,\"linkColor\":\"#dedede\",\"linkHoverColor\":\"#444\",\"linkSize\":1,\"alwaysShowLinksLabels\":true,\"groupingForce\":{},\"nodeIcons\":{},\"wrapForeignObjectHtmlInBodyTag\":false,\"layersOrder\":[\"legend\",\"links\",\"linksLabelsBack\",\"nodes\",\"linksLabels\"],\"showContextMenu\":false},\"nodes\":[{\"id\":\"eegid-SW_FILM\",\"label\":\"SW_FILM\",\"nodeType\":\"sw_films\",\"size\":20,\"index\":0,\"weight\":2,\"x\":454.275050455467,\"y\":95.84428411650592,\"px\":450.275050455467,\"py\":95.84428411650592,\"fixed\":1},{\"id\":\"eegid-SW_PEOPLE\",\"label\":\"SW_PEOPLE\",\"nodeType\":\"sw_people\",\"size\":20,\"index\":1,\"weight\":2,\"x\":42.72166358237598,\"y\":89,\"px\":42.72166358237598,\"py\":89,\"fixed\":1}],\"links\":[{\"source\":\"eegid-SW_FILM\",\"target\":\"eegid-SW_PEOPLE\",\"linkType\":\"filter people on films\",\"undirected\":true,\"size\":1,\"id\":\"eegid-SW_FILM-eegid-SW_PEOPLE-filter people on films-0\",\"data\":{\"relation\":\"sw_films/films/characters/sw_people/people/name\",\"dashboards\":[\"SW_FILM\",\"SW_PEOPLE\"]}},{\"source\":\"eegid-SW_PEOPLE\",\"target\":\"eegid-SW_FILM\",\"linkType\":\"filter films on people\",\"undirected\":true,\"size\":1,\"id\":\"eegid-SW_PEOPLE-eegid-SW_FILM-filter films on people-1\",\"data\":{\"relation\":\"sw_films//title/sw_people//films\",\"dashboards\":[\"SW_PEOPLE\",\"SW_FILM\"]}}]}}",
+      "kibi:relationalPanel": true
+    }
+  },
+  {
+    "_id": "SW_PEOPLE",
+    "_type": "dashboard",
+    "_source": {
+      "title": "SW_PEOPLE",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"people_homeworld\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":4,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"PEOPLE_GENDER\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":4,\"size_y\":4,\"col\":5,\"row\":1},{\"id\":\"people_avg_height_mass\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":4,\"size_y\":4,\"col\":9,\"row\":1},{\"id\":\"people_species_by_film\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":12,\"size_y\":3,\"col\":1,\"row\":5},{\"id\":\"people_table\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":12,\"size_y\":4,\"col\":1,\"row\":8},{\"id\":\"people_species_in_mass_range\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":6,\"size_y\":5,\"col\":1,\"row\":12},{\"id\":\"people_film_count\",\"type\":\"visualization\",\"panelIndex\":7,\"size_x\":6,\"size_y\":5,\"col\":7,\"row\":12}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "savedSearchId": "All_people",
+      "priority": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "SW_FILM",
+    "_type": "dashboard",
+    "_source": {
+      "title": "SW_FILM",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"film_crawl_words\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"film_release\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":1},{\"id\":\"film_characters\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":5},{\"id\":\"film_planets\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":3,\"size_y\":2,\"col\":4,\"row\":5},{\"id\":\"film_vehicles\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":3,\"size_y\":2,\"col\":7,\"row\":5},{\"id\":\"film_starships\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":3,\"size_y\":2,\"col\":10,\"row\":5}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "savedSearchId": "All_films",
+      "priority": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "sw_films",
+    "_type": "index-pattern",
+    "_source": {
+      "title": "sw_films",
+      "paths": "{\"characters\":[\"characters\"],\"created\":[\"created\"],\"director\":[\"director\"],\"edited\":[\"edited\"],\"episode_id\":[\"episode_id\"],\"opening_crawl\":[\"opening_crawl\"],\"planets\":[\"planets\"],\"producer\":[\"producer\"],\"release_date\":[\"release_date\"],\"species\":[\"species\"],\"starships\":[\"starships\"],\"title\":[\"title\"],\"url\":[\"url\"],\"vehicles\":[\"vehicles\"]}",
+      "fields": "[{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false},{\"name\":\"vehicles\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"opening_crawl\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":true,\"doc_values\":false},{\"name\":\"title\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"characters\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"episode_id\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"planets\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"edited\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"director\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"created\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"url\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"starships\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"release_date\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"species\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"producer\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false},{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false}]"
+    }
+  },
+  {
+    "_id": "sw_people",
+    "_type": "index-pattern",
+    "_source": {
+      "title": "sw_people",
+      "paths": "{\"birth_year\":[\"birth_year\"],\"created\":[\"created\"],\"edited\":[\"edited\"],\"eye_color\":[\"eye_color\"],\"films\":[\"films\"],\"gender\":[\"gender\"],\"hair_color\":[\"hair_color\"],\"height\":[\"height\"],\"homeworld\":[\"homeworld\"],\"mass\":[\"mass\"],\"name\":[\"name\"],\"skin_color\":[\"skin_color\"],\"species\":[\"species\"],\"starships\":[\"starships\"],\"url\":[\"url\"],\"vehicles\":[\"vehicles\"],\"opening_crawl\":[\"opening_crawl\"]}",
+      "fields": "[{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false},{\"name\":\"opening_crawl\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":true,\"doc_values\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false},{\"name\":\"homeworld\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"gender\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"skin_color\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"mass\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"vehicles\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"birth_year\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"eye_color\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"height\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"films\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"edited\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"created\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"url\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"hair_color\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"starships\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"species\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"name\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":true,\"analyzed\":false,\"doc_values\":true},{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"indexed\":false,\"analyzed\":false,\"doc_values\":false}]"
+    }
+  },
+  {
+    "_id": "All_films",
+    "_type": "search",
+    "_source": {
+      "title": "All_films",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_films\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "All_people",
+    "_type": "search",
+    "_source": {
+      "title": "All_people",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_people\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "kibi-html-angular",
+    "_type": "template",
+    "_source": {
+      "title": "kibi-html-angular",
+      "description": "An html-angular template, for each document displays a panel populated with all property values",
+      "templateSource": "<!-- \n  Example html-angular template \n  For each document a panel populated with all property values \n-->\n<!DOCTYPE html>\n<div style=\"word-wrap: break-word;\">\n  <div \n    ng-repeat=\"hit in hits|limitTo:limit track by hit._index+hit._type+hit._id+hit._score\"\n    class=\"snippet\" \n    style=\"width: 99%; border:1px #ddd solid; margin: 4px; padding: 4px; float: left\">\n    <h4 ng-if=\"hit._source.title\">{{indexPattern.formatField(hit, \"title\")}}</h4>\n    <table>\n      <tr>\n        <th style=\"text-align: right; padding: 4px;\">Property</th>\n        <th style=\"padding: 4px;\">Value</th>\n      </tr>\n      <tr \n        ng-repeat=\"(key,value) in hit._source\"\n        ng-if=\"value !== null && value !== undefined && value !== ''\"\n      >\n        <td style=\"width: 150px; font-weight: bold; vertical-align: top; text-align: right; padding: 4px;\">\n          {{key}}:\n        </td>\n        <td style=\"padding: 4px;\">\n          {{value}}\n        </td>\n      </tr>  \n    </table>\n  </div>\n</div>\n<div style=\"clear: both;\"></div>",
+      "templateEngine": "html-angular",
+      "version": 2,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "kibi-table-handlebars",
+    "_type": "template",
+    "_source": {
+      "title": "kibi-table-handlebars",
+      "description": "A Handlebars template that displays query results as a table.",
+      "templateEngine": "handlebars",
+      "templateSource": "{{! Handlebars table template example}}\n\n{{#if config.templateVars.hidden}}\n{{else}}\n  {{#if config.open}}\n    <span class=\"snippetLabel\">{{config.templateVars.label}}</span>\n    <a href=\"javascript:showHide('{{id}}');\" id=\"button-{{id}}\" class=\"snippetShowHideButton\" style=\"font-size:12px;\">- Hide</a> \n    <span> ({{results.bindings.length}})</span>\n    <div id=\"cont-{{id}}\"  style=\"display: block;\">\n  {{else}}\n    <span class=\"snippetLabel\">{{config.templateVars.label}}</span>\n    <a href=\"javascript:showHide('{{id}}');\" id=\"button-{{id}}\" class=\"snippetShowHideButton\" style=\"font-size:12px;\"> + Show</a> \n    <span> ({{results.bindings.length}})</span>\n    <div id=\"cont-{{id}}\"  style=\"display: none;\">\n  {{/if}}\n  <style>\n    table.custom-header th {color:black;}\n  </style>\n  <table class=\"table table-condensed custom-header\">\n      <thead>\n      <tr>\n          {{#each head.vars}}\n              <th>{{this}}</th>\n          {{/each}}\n      </tr>\n      </thead>\n      <tbody>\n      {{#each results.bindings}}\n      <tr>\n          {{#each ../head.vars}}\n            \n            {{!-- \n                  to handle \"this\" correctly a custom helper is available  \n                  \"../this\" is a reference to the binding\n                  while \"this\" contains the variable name\n            --}}\n            \n            {{#getVariableValue ../this this \"uri\" }}\n              <td>\n                <a href=\"{{value}}\">{{label}}</a>\n              </td>\n            {{else}}\n              <td>\n                {{value}}\n              </td>\n            {{/getVariableValue}}\n          {{/each}}\n      </tr>\n      {{/each}}\n      </tbody>\n  </table>\n  <br/>\n  <br/>\n  <script>\n    // here is how to pass the results  \n    var x = {{{json results}}};\n    // console.log(x);\n  \n   function showHide(id){\n    var buttonEl = document.getElementById('button-' + id);\n    var contEl = document.getElementById('cont-' + id);\n    var style = window.getComputedStyle(contEl);\n  \n    if (style.display == 'none') {\n      contEl.style.display = 'block';\n      buttonEl.innerHTML = '- Hide';\n    } else {\n      buttonEl.innerHTML = '+ Show';\n      contEl.style.display = 'none';\n    }\n  }\n<{{!}}/script>\n  </div>\n{{/if}}",
+      "version": 2,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "kibi-table-jade",
+    "_type": "template",
+    "_source": {
+      "title": "kibi-table-jade",
+      "description": "A Jade template that displays query results as a table.",
+      "templateEngine": "jade",
+      "templateSource": "//- Jade generic table template example\n\n- var display    = (config.open === true ? 'block' : 'none')\n- var buttonText = (config.open === true ? '- Hide' : '+ Show')\n\nstyle.\n thead.custome-header thead{color:#black;}\n\na(href=\"javascript:showHide('#{id}');\", id=\"button-#{id}\", class=\"snippetShowHideButton\") #{buttonText} \nspan= ' '\nspan(class=\"snippetLabel\")= config.templateVars.label\nspan=  ' ('+results.bindings.length +') '\ndiv(id=\"cont-#{id}\", style={display: display})\n  if results.bindings.length == 0\n    div(class=\"table-vis-error\") \n      h2\n        i(class=\"fa fa-meh-o\")\n      h4 No results found\n  else\n    table(class='table table-condensed custome-header')\n      thead\n        tr\n          each val in head.vars\n            th= val\n      tbody\n        each binding in results.bindings\n          tr\n            each varName in head.vars\n              if binding[varName]\n                if binding[varName].type == \"uri\"\n                  td\n                    a(href=\"#{binding[varName].value}\") #{binding[varName].label}\n                else\n                  td= binding[varName].value\n              else\n                td\nscript(type='text/javascript').\n  function showHide(id){\n    var buttonEl = document.getElementById('button-' + id);\n    var contEl = document.getElementById('cont-' + id);\n    var style = window.getComputedStyle(contEl);\n  \n    if (style.display == 'none') {\n      contEl.style.display = 'block';\n      buttonEl.innerHTML = '- Hide';\n    } else {\n      buttonEl.innerHTML = '+ Show';\n      contEl.style.display = 'none';\n    }\n  }\n  var x = !{JSON.stringify(results)};",
+      "version": 2,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "kibi-json-jade",
+    "_type": "template",
+    "_source": {
+      "title": "kibi-json-jade",
+      "description": "A Jade template that displays query results as a JSON object.",
+      "templateSource": "//- The data passed to the template has the following format\n//- {\n//-   id: STRING, // a unique random id\n//-   results: {...}, // data returned by the query\n//-   config: {},     // query configuration\n//-   \n//- }\n//-\n//- Data returned by the query is assigned\n//- to the **results** property \n//- and can be used inside the template.\n\npre(id=id)= empty\nscript(type='text/javascript').\n  var id = '!{id}';\n  var x = !{JSON.stringify(results)};\n  var el = document.getElementById(id);\n  el.innerHTML = JSON.stringify(x, null, ' ');",
+      "templateEngine": "jade",
+      "version": 2,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    }
+  },
+  {
+    "_id": "film_crawl_words",
+    "_type": "visualization",
+    "_source": {
+      "title": "film_crawl_words",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"kibi_wordcloud\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"opening_crawl\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_films\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "people_avg_height_mass",
+    "_type": "visualization",
+    "_source": {
+      "title": "people_avg_height_mass",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"height\"}},{\"id\":\"2\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"mass\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_people\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "people_table",
+    "_type": "visualization",
+    "_source": {
+      "title": "people_table",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"name\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_people\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "people_species_by_film",
+    "_type": "visualization",
+    "_source": {
+      "title": "people_species_by_film",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"films\",\"size\":7,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"species\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_people\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "film_characters",
+    "_type": "visualization",
+    "_source": {
+      "title": "film_characters",
+      "visState": "{\"title\":\"film_planets\",\"type\":\"kibi_wordcloud\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"characters\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_films\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "film_vehicles",
+    "_type": "visualization",
+    "_source": {
+      "title": "film_vehicles",
+      "visState": "{\"title\":\"film_starships\",\"type\":\"kibi_wordcloud\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"vehicles\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_films\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "film_starships",
+    "_type": "visualization",
+    "_source": {
+      "title": "film_starships",
+      "visState": "{\"title\":\"film_planets\",\"type\":\"kibi_wordcloud\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"starships\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_films\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "PEOPLE_GENDER",
+    "_type": "visualization",
+    "_source": {
+      "title": "PEOPLE_GENDER",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"gender\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_people\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "people_species_in_mass_range",
+    "_type": "visualization",
+    "_source": {
+      "title": "people_species_in_mass_range",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"mass\",\"interval\":25,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"species\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_people\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "people_film_count",
+    "_type": "visualization",
+    "_source": {
+      "title": "people_film_count",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"films\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"name\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_people\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "people_homeworld",
+    "_type": "visualization",
+    "_source": {
+      "title": "people_homeworld",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"homeworld\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_people\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "film_release",
+    "_type": "visualization",
+    "_source": {
+      "title": "film_release",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"release_date\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"title\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_films\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "film_planets",
+    "_type": "visualization",
+    "_source": {
+      "title": "film_planets",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"kibi_wordcloud\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"planets\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"kibiSettings\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"sw_films\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]
